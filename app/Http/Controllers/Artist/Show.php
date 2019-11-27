@@ -16,8 +16,6 @@ class Show extends Controller
      */
     public function __invoke(Request $request, Artist $artist)
     {
-        return new ArtistResource(
-            (new Artist)->with(['albums'])->findOrFail($artist->ArtistId)
-        );
+        return new ArtistResource($artist);
     }
 }

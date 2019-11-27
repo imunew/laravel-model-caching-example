@@ -16,8 +16,6 @@ class Show extends Controller
      */
     public function __invoke(Request $request, Album $album)
     {
-        return new AlbumResource(
-            (new Album)->with(['artist'])->findOrFail($album->AlbumId)
-        );
+        return new AlbumResource($album);
     }
 }
